@@ -7,12 +7,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-gray-800">
-            <a href="#" className="text-teal-600">MR Platform</a>
+            <Link to='/' className="text-teal-600">MR Platform</Link>
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="text-gray-800 hover:text-teal-600">Resources</a>
-            <a href="#" className="text-gray-800 hover:text-teal-600">About</a>
-            <a href="#" className="text-gray-800 hover:text-teal-600">Contact us</a>
+            <Link to='/resources' className="text-gray-800 hover:text-teal-600">Resources</Link>
+            <Link to='/about' className="text-gray-800 hover:text-teal-600">About us</Link>
+            <Link to='/contact' className="text-gray-800 hover:text-teal-600">Contact us</Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <Link to='/login' className="text-gray-800 hover:text-teal-600">Login</Link>

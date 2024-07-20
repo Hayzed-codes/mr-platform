@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import FeaturesSection from "./FeaturesSection";
-import Footer from "../../../Footer";
+import Footer from "../Footer/Footer";
 
 const HeroSection = () => {
   return (
