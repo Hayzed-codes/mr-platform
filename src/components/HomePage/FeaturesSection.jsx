@@ -1,22 +1,29 @@
-import React from 'react';
+import React from "react";
 
 const FeaturesSection = () => {
   return (
-    <section className="container mx-auto px-6 py-16">
-      <div className="text-center mb-12 px-[18rem]">
-        <h2 className=" text-3xl font-bold text-gray-800">Discover the Transformative Power of our Social Reward Platform</h2>
-        <p className="text-gray-600 mt-4 text-sm">Elevate your marketing efforts and unlock unprecedented growth. Our innovative platform seamlessly integrates with your existing strategies, empowering you to reach new heights of success. Enjoy unmatched rewards, streamlined engagements</p>
+    <section className="container mx-auto px-8 py-16 bg-gray-50">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Platform?</h2>
+        <p className="text-gray-700 text-lg">
+          Experience a new way to market and grow your brand, with our innovative reward system that integrates perfectly with your social marketing efforts.
+        </p>
       </div>
-      <div className="flex flex-wrap -mx-6">
-        <div className="w-full md:w-1/2 px-6 mb-12 md:mb-0">
-          <img src="/ref&loy.png" alt="Referral and loyalty" className="w-full rounded-lg mb-6"/>
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Referral and loyalty</h3>
-          <p className="text-gray-600 text-xl">Turn your first-time users into loyal users.</p>
+      <div className="flex flex-wrap justify-center gap-16">
+        <div className="w-full md:w-1/3">
+          <img src="/ref&loy.png" alt="Feature 1" className="w-full rounded-lg shadow-md mb-6" />
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Referral & Loyalty</h3>
+          <p className="text-gray-600">Keep your customers coming back with targeted rewards and referral incentives.</p>
         </div>
-        <div className="w-full md:w-1/2 px-6">
-          <img src="/tarSoc.png" alt="Targeted social" className="w-full rounded-lg mb-6"/>
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Unlock the power of targeted social</h3>
-          <p className="text-gray-600 text-xl">Elevate your brand's social presence with social incentives.</p>
+        <div className="w-full md:w-1/3">
+          <img src="/tarSoc.png" alt="Feature 2" className="w-full rounded-lg shadow-md mb-6" />
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Targeted Social Reach</h3>
+          <p className="text-gray-600">Maximize your social engagement by tapping into key influencers and user-generated content.</p>
+        </div>
+        <div className="w-full md:w-1/3">
+          <img src="/bgHero.png" alt="Feature 3" className="w-full rounded-lg shadow-md mb-6" />
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Boosted Conversion</h3>
+          <p className="text-gray-600">Turn your leads into loyal customers through targeted rewards and campaigns.</p>
         </div>
       </div>
     </section>

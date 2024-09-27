@@ -1,0 +1,30 @@
+/* AnalyticsCards.css */
+.analytics-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* .card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  color: #333;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.card span {
+  font-size: 14px;
+  color: #666;
+}

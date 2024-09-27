@@ -1,0 +1,14 @@
+/* RevenueAnalytics.css */
+.revenue-analytics {
+  margin-bottom: 20px;
+}
+
+.chart-placeholder {
+  background-color: #ececec;
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}

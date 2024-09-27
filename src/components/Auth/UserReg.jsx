@@ -1,5 +1,4 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-// import "./Register.css";
 import Loader from "../Loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
 import PasswordInput from "../PasswordInput/PasswordInput";
@@ -9,14 +8,14 @@ import { toast } from "react-toastify";
 import { FaTimes } from "react-icons/fa";
 import { BsCheck2All } from "react-icons/bs";
 
-const Register = () => {
+const UserReg = () => {
   const [loading, setLoading] = useState(true);
   const { setUser } = useContext(UserContext);
   const [formValidMessage, setFormValidMessage] = useState(false);
   const [formCompleted, setFormCompleted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
+    name: "",
     email: "",
     password: "",
     password2: "",
@@ -57,9 +56,9 @@ const Register = () => {
     (event) => {
       event.preventDefault();
 
-      const { firstName, email, password, password2 } = formData;
+      const { name, email, password, password2 } = formData;
 
-      if (!firstName || !email || !password || !password2) {
+      if (!name || !email || !password || !password2) {
         setFormValidMessage("Oops!! All fields are required😵");
         return;
       }
@@ -72,13 +71,13 @@ const Register = () => {
       setIsSubmitting(true);
 
       axios
-        .post("http://localhost:3500/admin/create", formData)
+        .post("http://localhost:3500/user/create", formData)
         .then((response) => {
           setUser(response.data);
           setIsSubmitting(false);
           setFormCompleted(true);
           toast.success("Registration Successful");
-          navigate("/admindash", { state: { user: response.data } });
+          navigate("/dashboard", { state: { user: response.data } });
         })
         .catch((error) => {
           setIsSubmitting(false);
@@ -109,25 +108,25 @@ const Register = () => {
               Create an account
             </h2>
 
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                  First Name
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  Name:
                 </label>
                 <input
                   type="text"
                   className="mt-1 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-teal-500"
-                  name="firstName"
-                  placeholder="Enter your first name"
+                  name="name"
+                  placeholder="Enter your name"
                   required
-                  value={formData.firstName}
+                  value={formData.name}
                   onChange={handleInputChange}
                 />
               </div>
 
-              <div className="mb-4">
+              <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
+                  Email:
                 </label>
                 <input
                   type="email"
@@ -140,24 +139,26 @@ const Register = () => {
                 />
               </div>
 
-              <div className="mb-4">
+              <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                  Password
+                  Password:
                 </label>
                 <PasswordInput
-                  placeholder="Enter your password"
+                  className="mt-1 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-teal-500"
+                  placeholder="Password"
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
                 />
               </div>
 
-              <div className="mb-4">
+              <div>
                 <label htmlFor="password2" className="block text-sm font-medium text-gray-700">
-                  Confirm Password
+                  Confirm password:
                 </label>
                 <PasswordInput
-                  placeholder="Confirm your password"
+                  className="mt-1 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-teal-500"
+                  placeholder="Confirm Password"
                   name="password2"
                   value={formData.password2}
                   onChange={handleInputChange}
@@ -194,11 +195,11 @@ const Register = () => {
                 {isSubmitting ? "Signing you up..." : "Create Account"}
               </button>
             </form>
-
             {formValidMessage && <p className="text-red-500 text-center mt-4">{formValidMessage}</p>}
 
             <p className="text-center mt-4">
-              Already have an account? <Link to="/login" className="text-teal-600 hover:underline">Login</Link>
+              Already have an account? 
+              <Link to="/user-log" className="text-teal-600 hover:underline"> Login</Link>
             </p>
           </div>
         </div>
@@ -207,4 +208,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default UserReg;

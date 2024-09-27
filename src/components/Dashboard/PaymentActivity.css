@@ -1,0 +1,28 @@
+PaymentActivity.css
+.payment-activity {
+  margin-bottom: 20px;
+}
+
+.payment-activity table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-activity th, .payment-activity td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.payment-activity th {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* .payment-activity tr:nth-child(even) {
+  background-color: #f4f5f7;
+} */
+
+.payment-activity td {
+  color: #555;
+}
